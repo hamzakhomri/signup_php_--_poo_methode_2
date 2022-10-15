@@ -2,7 +2,7 @@
 
 class dbh{
 
-    protected function Coneect(){
+    public function Coneect(){
 
         try{
 

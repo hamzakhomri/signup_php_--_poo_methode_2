@@ -26,6 +26,7 @@
               <input type="password" name="password" placeholder="Password" />
             </div>
             <input type="submit" name="submit" value="Login" class="btn solid" />
+            <button type="submit" name="submit">sign up</button>
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -43,7 +44,9 @@
             </div>
           </form>
 
+
           <form action="includes/signup.inc.php" method="post" class="sign-up-form">
+            
             <h2 class="title">Sign up</h2>
             <!-- <div class="input-field">
               <i class="fas fa-user"></i>
@@ -51,13 +54,13 @@
             </div> -->
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
+              <input type="text" placeholder="Email" name="adresse"/>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password" name="password" />
             </div>
-            <input type="submit" class="btn" value="Sign up" />
+            <input type="submit" name="submit" class="btn" value="Sign uuup" />
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -74,6 +77,8 @@
               </a>
             </div>
           </form>
+
+
         </div>
       </div>
 

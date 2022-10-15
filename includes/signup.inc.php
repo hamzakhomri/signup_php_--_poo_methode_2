@@ -8,10 +8,11 @@ if( isset($_POST["submit"]) )
     $password =$_POST["password"];
 
     //Instantiate signupContr class
+    
 
-    include "../calsses/dbh.classes.php";
-    include "../calsses/sigup.classes.php";
-    include "../calsses/sigup-contr.classes.php";
+    include "../classes/dbh.classes.php";
+    include "../classes/signup.classes.php";
+    include "../classes/signup-contr.classes.php";
 
     $signup = new SignupContr($adresse,$password);
 

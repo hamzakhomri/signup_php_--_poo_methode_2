@@ -16,7 +16,7 @@ class SignupContr extends signup{
 
         if($this->emptyInput() == false){
             //echo "Invalid Input";
-            header("location : ../index.php?error=emptynput");
+            header ("location : ../index.php?error=emptynput");
             exit();
         }
 
@@ -26,7 +26,7 @@ class SignupContr extends signup{
 
     private function emptyInput(){
         $result;
-        if(empty($this->adresse) || empty( $this->password))
+        if( empty($this->adresse) || empty( $this->password))
         {
             $result =false;
         }	
@@ -52,10 +52,10 @@ class SignupContr extends signup{
         return $result;
     }
 
-    private function invalidEmail(){
+    private function invalidEmail(){ 
 
         $result;
-        if(!filter_var($this->adresse,FILTER_VAR_VALIDATE_EMAIL)){
+        if(!filter_var($this->adresse,FILTER_VALIDATE_EMAIL)){
             $result =false;
         }
 

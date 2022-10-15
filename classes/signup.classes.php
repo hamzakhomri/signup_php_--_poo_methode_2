@@ -18,6 +18,7 @@ class signup extends dbh {
         
     }
 
+    
     protected function chackUser ($adresse,$password) {
         
         $stmt = $this->Coneect()->prepare('SELECT * FROM login where adresse=? OR mot_de_passe=?;');
