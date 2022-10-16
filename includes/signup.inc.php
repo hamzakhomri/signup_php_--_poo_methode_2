@@ -9,7 +9,7 @@ if( isset($_POST["submit"]) )
 
     //Instantiate signupContr class
     
-
+    
     include "../classes/dbh.classes.php";
     include "../classes/signup.classes.php";
     include "../classes/signup-contr.classes.php";
@@ -18,10 +18,15 @@ if( isset($_POST["submit"]) )
 
 
     //Running error hadlers && user signup
-    $signup->singupUser();
+    
+    //$signup->singupUser();
 
     //Going back to front page
-    header("location:../index.php?error=none");
+    header("location: ../index.php?error=none");
+
+    // $parent = dirname($_SERVER['REQUEST_URI']);
+    // header("Location: $parent/index.php");
+
 
 }
 ?>
