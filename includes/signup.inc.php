@@ -15,11 +15,11 @@ if( isset($_POST["submit"]) )
     include "../classes/signup-contr.classes.php";
 
     $signup = new SignupContr($adresse,$password);
-
+    echo "signup inc php";
 
     //Running error hadlers && user signup
     
-    //$signup->singupUser();
+    $signup->singupUser();
 
     //Going back to front page
     header("location: ../index.php?error=none");

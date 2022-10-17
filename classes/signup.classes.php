@@ -13,6 +13,7 @@ class signup extends dbh {
             header("location: ../index.php?error=stmtfailed");
             exit();
         }
+        
         $stmt=null;
 
         
@@ -29,13 +30,15 @@ class signup extends dbh {
             exit();
         }
 
-        $reusltChack;
+        $reusltChack ;
 
         if( $stmt->rowCount() > 0 ) {
+
             $reusltChack=false;
         }
 
         else{
+            
             $reusltChack=true;
         }
 

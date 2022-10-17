@@ -3,9 +3,9 @@
 class SignupContr extends signup{
 
     private $adresse;
-    private $aassword;
+    private $password;
 
-    public function __constructor($adresse,$password){
+    public function __construct($adresse,$password){
 
         $this->adresse=$adresse;
         $this->password=$password;
@@ -16,16 +16,19 @@ class SignupContr extends signup{
 
         if($this->emptyInput() == false){
             //echo "Invalid Input";
-            header ("location : ../index.php?error=emptynput");
+            $parent = dirname($_SERVER['REQUEST_URI']);
+            header("Location: $parent/../index.php?error=emptyInput");
+            // header ("location : /index.php?error=emptyInput");
             exit();
         }
 
-        $this->setUser($adresse,$password);
+        $this->setUser($this->adresse,$this->password);
 
     }
-
+    
     private function emptyInput(){
-        $result;
+
+       $result;
         if( empty($this->adresse) || empty( $this->password))
         {
             $result =false;
@@ -39,6 +42,7 @@ class SignupContr extends signup{
         return $result;
     }
 
+    //Not Calling
     private function invalidUid(){
 
         $result;
@@ -52,6 +56,7 @@ class SignupContr extends signup{
         return $result;
     }
 
+    //Not Calling
     private function invalidEmail(){ 
 
         $result;
@@ -65,6 +70,7 @@ class SignupContr extends signup{
         return $result;
     }
 
+    //Not Calling
     private function pwdMatch(){
 
         $result;
@@ -78,6 +84,7 @@ class SignupContr extends signup{
         return $result;
     }
 
+    //Not Calling
     private function idCheck(){
 
         $result;

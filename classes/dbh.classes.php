@@ -5,6 +5,7 @@ class dbh{
     public function Coneect(){
 
         try{
+           
 
             $username="root";
             $password="";
@@ -15,7 +16,7 @@ class dbh{
         }
         catch(PDOException $e){
             print "ERROR :".$e->getMessage()."<br/>";
-            die;
+            die();
         }
 
     }
