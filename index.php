@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,6 +12,15 @@
     <title>Sign in & Sign up Form</title>
   </head>
   <body>
+    <header> 
+      <?php if(isset($_SESSION["adresse"])){ ?>
+          <h4><?php $_SESSION["adresse"] ?></h4>
+        < h4>LOGOUT</h4>
+        <?php } else{?>
+          <h4>SIGN-UP</h4>
+          <h4>LOGIN</h4>
+        <?php } ?>
+    </header>
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
