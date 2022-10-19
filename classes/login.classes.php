@@ -21,7 +21,7 @@ class login extends dbh {
         }
         
         $pwdHashed=$stmt->fetchAll(PDO::FETCH_ASSOC);
-        $checkpawd=passwod_verify($password,$pwdHashed[0]["mot_de_passe"]);
+        $checkpawd=password_verify($password,$pwdHashed[0]["mot_de_passe"]);
         
         if($checkpawd==false){
             $stmt=null;
@@ -45,10 +45,11 @@ class login extends dbh {
             }
 
             $user =$stmt->fetchAll(PDO::FETCH_ASSOC);
+
             session_start();
-            $_SESSION("adresse")=$adresse[0]["adresse"];
-            $_SESSION("mot_de_passe")=$adresse[0]["adresse"];
-            $stmt=null;
+            $_SESSION["adresse"] = $user[0]["adresse"];
+            $_SESSION["mot_de_passe"]=$user[0]["adresse"];
+
 
         }
         

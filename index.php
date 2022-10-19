@@ -12,6 +12,7 @@
     <title>Sign in & Sign up Form</title>
   </head>
   <body>
+
     <header> 
       <?php if(isset($_SESSION["adresse"])){ ?>
           <h4><?php $_SESSION["adresse"] ?></h4>
@@ -21,22 +22,26 @@
           <h4>LOGIN</h4>
         <?php } ?>
     </header>
+
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
 
-          <form action="includes/loginc.inc.php" method="post" class="sign-in-form">
+          <form action="includes/login.inc.php" method="post" class="sign-in-form">
             <h2 class="title">LOGIN</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" name="adresse" placeholder="adresse" />
+
+              <input type="text" name="adresse" placeholder="adresse" >
+
             </div> 
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" name="password" placeholder="Password" />
+
+              <input type="password" name="password" placeholder="Password">
+
             </div>
             <input type="submit" name="submit" value="Login" class="btn solid" />
-            <button type="submit" name="submit">sign up</button>
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
