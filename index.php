@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php 
+session_start(); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,12 +17,22 @@
   <body>
 
     <header> 
-      <?php if(isset($_SESSION["adresse"])){ ?>
-          <h4><?php $_SESSION["adresse"] ?></h4>
-        < h4>LOGOUT</h4>
-        <?php } else{?>
-          <h4>SIGN-UP</h4>
-          <h4>LOGIN</h4>
+
+      <ul>
+        <?php
+          if(isset($_SESSION["adresse"]))
+          {
+        ?>
+          <li><a href="#"><?php echo $_SESSION["adresse"] ?></a></li>
+          <li><a href="includes/logout.inc.php">LOGOUT</a></li>
+      </ul>
+
+        <?php
+        }
+        else{
+        ?>
+          <li><a href="#">SIGN UP</a></li>
+          <li><a href="#">LOGIN</a></li>
         <?php } ?>
     </header>
 

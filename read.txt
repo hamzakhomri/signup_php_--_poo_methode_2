@@ -1,0 +1,19 @@
+    <header> 
+
+      <ul>
+        <?php
+          if(isset($_SESSION["adresse"]))
+          {
+        ?>
+          <li><a href="#"><?php echo $_SESSION["adresse"] ?></a></li>
+          <li><a href="includes/logout.inc.php">LOGOUT</a></li>
+      </ul>
+
+        <?php
+        }
+        else{
+        ?>
+          <li><a href="#">SIGN UP</a></li>
+          <li><a href="#">LOGIN</a></li>
+        <?php } ?>
+    </header>
