@@ -19,6 +19,7 @@ session_start();
     <header> 
 
       <ul>
+      <li><a href="includes/logout.inc.php">LOGOUT</a></li>
         <?php
           if(isset($_SESSION["adresse"]))
           {

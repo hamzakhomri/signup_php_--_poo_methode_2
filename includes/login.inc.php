@@ -17,12 +17,14 @@ if( isset($_POST["submit"]) )
     $login = new loginContr($adresse,$password);
     echo "login inc php";
 
+            
+
     //Running error hadlers && user signup
     
     $login->loginUser();
 
     //Going back to front page
-    header("location: ../index.php?error=none");
+    header("location: ../dashboard.php?error=none");
 
     // $parent = dirname($_SERVER['REQUEST_URI']);
     // header("Location: $parent/index.php");

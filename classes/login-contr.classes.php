@@ -18,6 +18,8 @@ class loginContr extends login{
             //echo "Invalid Input";
             $parent = dirname($_SERVER['REQUEST_URI']);
             header("Location: $parent/../index.php?error=emptyInput");
+            echo '<script>alert("empty input")</script>';
+            
             // header ("location : /index.php?error=emptyInput");
             exit();
         }
