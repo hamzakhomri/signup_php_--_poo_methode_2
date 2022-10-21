@@ -16,6 +16,7 @@ if( isset($_POST["submit"]) )
 
     $login = new loginContr($adresse,$password);
     echo "login inc php";
+    
 
             
 
