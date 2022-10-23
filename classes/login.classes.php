@@ -4,7 +4,7 @@ class login extends dbh {
 
     protected function getUser ($adresse,$password) {
         
-        $stmt = $this->Coneect()->prepare('SELECT mot_de_passe FROM login WHERE adresse=? OR mot_de_passe=?');
+        $stmt = $this->Coneect()->prepare('SELECT * FROM login WHERE adresse=? OR mot_de_passe=?');
 
         // THIS $adresse , $password IN IF IS ?? REQUEST BY ORDER
         if(!$stmt->execute(array($adresse,$password)) ) {
@@ -12,38 +12,27 @@ class login extends dbh {
             header("location: ../index.php?error=stmtfailed");
             exit();
         }
-
+        
+        //VERIFICATION USER (adresse and password) IF EXISIT OR NOT
         if($stmt->rowCount()==0){
             $stmt=null;
-            header("location: ../UserNotFound.php?error=UserNotFound");
+            header("location: ../UserNotFound.php?error=UserNotFound_1");
             exit();
         }
         
-
-
-
         //VERIFICATION PASSWORD IF EXISIT OR NOT
+        // I DONT KNOW HOW DOES'T WORK
         $pwdHashed=$stmt->fetchAll(PDO::FETCH_ASSOC);
         $checkpawd=password_verify($password,$pwdHashed[0]["mot_de_passe"]);
         
         if($checkpawd==false){
             $stmt=null;
-            header("location: ../index.php?error=WrongPassword");
+            header("location: ../index.php?error=WrongPassword_1");
             exit();
         }
 
 
-           //VERIFICATION PASSWORD IF EXISIT OR NOT
-           $pwdHashed=$stmt->fetchAll(PDO::FETCH_ASSOC);
-           $checkpawd=password_verify($password,$pwdHashed[1]["adresse"]);
-           
-           if($checkpawd==false){
-               $stmt=null;
-               header("location: ../index.php?error=WrongAdresse");
-               exit();
-           }
-
-
+            // I DONT KNOW IF WORK OR NOT AND HOW DOES'T WORK_
         elseif($checkpawd==true){
 
             $stmt = $this-> Coneect()->prepare('SELECT mot_de_passe FROM login WHERE adresse=? OR mot_de_passe=? ');
@@ -65,7 +54,6 @@ class login extends dbh {
             session_start();
             $_SESSION["adresse"] = $user[0]["adresse"];
             $_SESSION["mot_de_passe"]=$user[0]["adresse"];
-
 
         }
         
