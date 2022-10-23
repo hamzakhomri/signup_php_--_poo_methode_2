@@ -22,7 +22,7 @@ class login extends dbh {
 
         //VERIFICATION ADRESSE IF EXISTS OR NOT
         
-        if()
+        
 
         //VERIFICATION PASSWORD IF EXISIT OR NOT
 
