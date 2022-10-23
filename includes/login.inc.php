@@ -15,10 +15,7 @@ if( isset($_POST["submit"]) )
     include "../classes/login-contr.classes.php";
 
     $login = new loginContr($adresse,$password);
-    echo "login inc php";
-    
 
-            
 
     //Running error hadlers && user signup
     

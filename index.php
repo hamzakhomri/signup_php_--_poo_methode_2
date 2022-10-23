@@ -16,7 +16,7 @@ session_start();
   </head>
   <body>
 
-    <header> 
+    <!-- <header> 
 
       <ul>
       <li><a href="includes/logout.inc.php">LOGOUT</a></li>
@@ -35,7 +35,7 @@ session_start();
           <li><a href="#">SIGN UP</a></li>
           <li><a href="#">LOGIN</a></li>
         <?php } ?>
-    </header>
+    </header> -->
 
     <div class="container">
       <div class="forms-container">
