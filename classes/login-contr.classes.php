@@ -12,6 +12,11 @@ class loginContr extends login{
 
     }
 
+    public function getAllUsers()
+    {
+        $this ->getUsers();    
+    }
+
     public function loginUser(){
 
         if($this->emptyInput() == false){
@@ -21,9 +26,11 @@ class loginContr extends login{
             echo '<script>alert("empty input")</script>';
             
             // header ("location : /index.php?error=emptyInput");
+
+            
             exit();
         }
-
+     
         $this->getUser($this->adresse,$this->password);
 
     }

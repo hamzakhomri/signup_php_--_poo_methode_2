@@ -2,6 +2,29 @@
 
 class login extends dbh {
 
+
+    protected function getUsers () {
+
+        $stmt = $this->Coneect()->prepare('SELECT * FROM login ');
+
+        // THIS $adresse , $password IN IF IS ?? REQUEST BY ORDER
+        if(!$stmt->execute(array($adresse,$password)) ) {
+            $stmt =null;
+            header("location: ../index.php?error=stmtfailed");
+            exit();
+        }
+
+        //VERIFICATION USER (adresse and password) IF EXISIT OR NOT
+        if($stmt->rowCount()==0){
+            $stmt=null;
+            header("location: ../index.php?error=UserNotFound_1");
+            exit();
+        }
+        
+        $stmt=null;
+        
+    }
+
     protected function getUser ($adresse,$password) {
 
         $stmt = $this->Coneect()->prepare('SELECT * FROM login WHERE adresse=? OR mot_de_passe=?');
@@ -20,10 +43,6 @@ class login extends dbh {
             exit();
         }
 
-        //VERIFICATION ADRESSE IF EXISTS OR NOT
-        
-        
-
         //VERIFICATION PASSWORD IF EXISIT OR NOT
 
         $pwdHashed=$stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -34,23 +53,25 @@ class login extends dbh {
             header("location: ../index.php?error=WrongPassword_1");
             exit();                  
         }
+ 
+           
 
 
-        elseif($checkpawd==true){
-            $stmt = $this ->Coneect()->prepare('SELECT adresse FROM login WHERE adresse=?');
+        // elseif($checkpawd==true){
+        //     $stmt = $this ->Coneect()->prepare('SELECT adresse FROM login WHERE adresse=?');
 
-            if(!$stmt-> execute(array($adresse))){
-                $stmt=null;
-                header("locaton: ../index.php?error=stmtfailed");
-                exit();
-            }
-            if(!$stmt->rowCount()==0){
-                $stmt=null;
-                header("location: ../index.php?error=WrongAdresse");
-                exit();
-            }
+        //     if(!$stmt-> execute(array($adresse))){
+        //         $stmt=null;
+        //         header("locaton: ../index.php?error=stmtfailed");
+        //         exit();
+        //     }
+        //     if(!$stmt->rowCount()==0){
+        //         $stmt=null;
+        //         header("location: ../index.php?error=WrongAdresse");
+        //         exit();
+        //     }
 
-        }
+        // }
      
         
 

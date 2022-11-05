@@ -15,9 +15,10 @@ class signup extends dbh {
         }
         
         $stmt=null;
-
-        
     }
+
+
+    
 
     
     protected function chackUser ($adresse,$password) {

@@ -20,9 +20,11 @@ if( isset($_POST["submit"]) )
     //Running error hadlers && user signup
     
     $login->loginUser();
-
+  
     //Going back to front page
-    header("location: ../dashboard.php?error=none");
+    header("location: ../verify.php?error=none");
+
+
 
     // $parent = dirname($_SERVER['REQUEST_URI']);
     // header("Location: $parent/index.php");

@@ -1,5 +1,12 @@
+<?php
+
+    if(!isset($_SESSION)){
+        header('location:index.php?error=SessionDone'); }
+    
+?>
+
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <!-- Required meta tags -->
@@ -11,44 +18,46 @@
     <link rel="stylesheet" href="assets/DataTables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="assets/DataTables/Buttons-1.5.6/css/buttons.bootstrap4.min.css">
 
-    <title>Hello, world!</title>
+    <title>Sowing users</title>
 </head>
 
 <body>
 
+
+
     <div class="container">
         <div class="card mt-5">
             <div class="card-body">
-                <h1 class="display-4">Table</h1>
+                <h1 class="display-4">Users</h1>
             <table id="table" class="table table-striped table-bordered">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
+                <th>Adresse</th>
+                <th>Password</th>
+                <!-- <th>Office</th>
                 <th>Age</th>
                 <th>Start date</th>
-                <th>Salary</th>
+                <th>Salary</th> -->
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>Tiger Nixon</td>
                 <td>System Architect</td>
-                <td>Edinburgh</td>
+                <!-- <td>Edinburgh</td>
                 <td>61</td>
                 <td>2011/04/25</td>
                 <td>$320,800</td>
-            </tr>
+            </tr> -->
             <tr>
                 <td>Garrett Winters</td>
                 <td>Accountant</td>
-                <td>Tokyo</td>
+                <!-- <td>Tokyo</td>
                 <td>63</td>
                 <td>2011/07/25</td>
-                <td>$170,750</td>
+                <td>$170,750</td> -->
             </tr>
-            <tr>
+            <!-- <tr>
                 <td>Ashton Cox</td>
                 <td>Junior Technical Author</td>
                 <td>San Francisco</td>
@@ -487,7 +496,7 @@
                 <td>27</td>
                 <td>2011/01/25</td>
                 <td>$112,000</td>
-            </tr>
+            </tr> -->
         </tbody>
     </table>
             </div>
