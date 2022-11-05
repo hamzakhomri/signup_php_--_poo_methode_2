@@ -53,7 +53,6 @@ class login extends dbh {
             header("location: ../index.php?error=WrongPassword_1");
             exit();                  
         }
- 
            
 
 

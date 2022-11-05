@@ -30,7 +30,6 @@ class loginContr extends login{
             
             exit();
         }
-     
         $this->getUser($this->adresse,$this->password);
 
     }

@@ -1,10 +1,11 @@
+
 <?php
-
-    if(!isset($_SESSION)){
-        header('location:index.php?error=SessionDone'); }
-    
+    if(!isset($_SESSION))
+    {
+        header("Location: index.php?EroorServer");
+        
+    }
 ?>
-
 <!doctype html>
 <html lang="fr">
 
@@ -22,9 +23,7 @@
 </head>
 
 <body>
-
-
-
+    <a href="includes/logout.inc.php"></a>
     <div class="container">
         <div class="card mt-5">
             <div class="card-body">
@@ -502,6 +501,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

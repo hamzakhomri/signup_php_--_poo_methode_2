@@ -4,9 +4,9 @@ session_start();
 session_unset();
 session_destroy();
 
-//header("location:../index.php/?LOGOUT")
+header("location:VerifySession.inc.php/?LOGOUT");
 
-$parent = dirname($_SERVER['REQUEST_URI']);
-            header("Location: $parent/../index.php?error=LOGOUT");
-
+// $parent = dirname($_SERVER['REQUEST_URI']);
+//             header("Location: $parent/VerifySession.inc.php?error=LOGOUT");
+echo "LOUGOUT INC PHP";
 ?> 
